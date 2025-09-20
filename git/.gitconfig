@@ -1,0 +1,10 @@
+[user]
+	name = bunnie
+	email = gbhagwaria@gmail.com
+	signingkey = D3B92FE6B8DFFE5575C923201B95290CDBA0BB8B
+[credential]
+    helper = gopass
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = master

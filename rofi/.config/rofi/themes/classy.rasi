@@ -1,0 +1,64 @@
+* {
+    background-color: #1e1e1e;
+    text-color: #e0e0e0;
+    selected-background: #3a3a3a;
+    selected-foreground: #ffffff;
+    urgent-background: #8b2e2e;
+    urgent-foreground: #ffffff;
+    border-color: #3a3a3a;
+    spacing: 6px;
+    font: "Monospace 16";  /* increased font size */
+}
+
+window {
+    width: 650px;           /* bigger window */
+    border: 2px;
+    border-color: #3a3a3a;
+    border-radius: 6px;     /* slightly rounder corners */
+    padding: 12px;          /* more padding */
+}
+
+mainbox {
+    spacing: 8px;
+    padding: 10px;
+}
+
+inputbar {
+    padding: 6px;
+    border: 1px;
+    border-color: #3a3a3a;
+}
+
+prompt {
+    text-color: #a0a0a0;
+    font: "Monospace 14";   /* larger prompt text */
+}
+
+entry {
+    text-color: #ffffff;
+    font: "Monospace 14";   /* larger input text */
+}
+
+listview {
+    columns: 1;
+    lines: 12;              /* show more items */
+    fixed-height: true;
+}
+
+element {
+    padding: 6px;           /* larger element spacing */
+    border-radius: 4px;
+    font: "Monospace 14";   /* larger element text */
+}
+
+element selected {
+    background-color: #3a3a3a;
+    text-color: #ffffff;
+}
+
+element normal {
+    background-color: transparent;
+    text-color: #e0e0e0;
+}
+
+

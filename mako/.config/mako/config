@@ -1,0 +1,45 @@
+font=Monospace 14
+format=<b> %a ⏵</b> %s\n%b
+sort=-time
+output=DP-2
+layer=overlay
+anchor=top-right
+background-color=#1e1e1e
+text-color=#e0e0e0
+width=400
+height=150
+margin=5
+padding=15,15,20
+border-size=2
+border-color=#3a3a3a
+border-radius=6
+icons=0
+max-icon-size=64
+default-timeout=10000
+ignore-timeout=1
+text-alignment=left
+
+[urgency=normal]
+background-color=#1e1e1e
+border-color=#3a3a3a
+text-color=#e0e0e0
+
+[urgency=high]
+background-color=#8b2e2e
+border-color=#3a3a3a
+text-color=#ffffff
+default-timeout=0
+
+[app-name=lightcord]
+background-color=#1e1e1e
+border-color=#3a3a3a
+text-color=#e0e0e0
+
+[summary~="log-.*"]
+border-color=#a3be8c
+background-color=#1e1e1e
+text-color=#e0e0e0
+
+[app-name=lightcord summary~="(.*(^| )orz|ORZ|sto|STO|otl|OTL( |$).*)"]
+invisible=1
+
