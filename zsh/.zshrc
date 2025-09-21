@@ -115,3 +115,4 @@ export PATH=$PATH:/home/bunnie/.spicetify
 export PATH="$HOME.npm-global/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 alias mail=neomutt
+alias lg='lazygit'
