@@ -115,4 +115,3 @@ export PATH=$PATH:/home/bunnie/.spicetify
 export PATH="$HOME.npm-global/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 alias mail=neomutt
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
