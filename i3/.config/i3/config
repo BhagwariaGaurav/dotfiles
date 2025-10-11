@@ -1,17 +1,11 @@
-# Kmag
-bindsym $mod+m exec --no-startup-id kmag
-
-# Flameshot
+bindsym $mod+t exec --no-startup-id kitty -e ~/scripts/tmux-sessionizer
+bindsym $mod+n exec --no-startup-id firefox
 bindsym $mod+u exec --no-startup-id flameshot gui
-
-# selective screenshot
-# bindsym $mod+p exec --no-startup-id bash -c 'FILE=~/Pictures/screenshot_$(date +%F_%H-%M-%S).png && maim -s "$FILE" && xclip -selection clipboard -t image/png -i "$FILE" && notify-send "Screenshot saved 📸" "$FILE copied to clipboard"'
-
-# Opens Nautilus
 bindsym $mod+b exec --no-startup-id thunar
-
-# Redshift
-bindsym $mod+n exec --no-startup-id ~/scripts/redshift_toggle.sh
+bindsym $mod+x exec --no-startup-id ~/scripts/redshift_toggle.sh
+bindsym $mod+m exec --no-startup-id rofi -show drun
+bindsym $mod+i exec --no-startup-id rofimoji
+bindsym $mod+o exec ~/scripts/rofi_sys
 
 # Removes the top title bar
 default_border pixel 3
@@ -71,9 +65,6 @@ bindsym $mod+q kill
 #bindsym $mod+d exec --no-startup-id dmenu_run
 
 # keybinds
-bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+i exec --no-startup-id rofimoji
-bindsym $mod+o exec ~/scripts/rofi_sys
 
 # change focus
 bindsym $mod+h focus left
@@ -201,9 +192,6 @@ exec_always --no-startup-id feh --bg-fill ~/Downloads/wallhaven-42epzy.jpg
 
 # NetworkManager applet
 exec --no-startup-id nm-applet 
-
-# Launch Brave with scaling fix
-bindsym $mod+x exec --no-startup-id brave-browser --enable-features=UseOzonePlatform --ozone-platform=x11 --force-device-scale-factor=1.25
 
 # Gaps
 gaps inner 5
