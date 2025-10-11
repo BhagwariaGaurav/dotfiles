@@ -116,3 +116,4 @@ export PATH="$HOME.npm-global/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 alias mail=neomutt
 alias lg='lazygit'
+alias t='tmux attach -t main || tmux new -s main'
