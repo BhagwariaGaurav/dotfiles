@@ -33,7 +33,7 @@ exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork 
 
 # keybinding to lock screen
-bindsym Control+Mod4+l exec "sh -c 'i3lock -c 000000 && loginctl suspend'" 
+bindsym Control+Mod4+l exec "sh -c 'i3lock -c 000000 && systemctl suspend'" 
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -188,7 +188,7 @@ bar {
 
 # Auto-Startup apps
 # exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/New_rec2025-06-13_22-24.png
-exec_always --no-startup-id feh --bg-fill ~/Downloads/wallhaven-42epzy.jpg
+exec_always --no-startup-id feh --bg-fill ~/walls/271046.jpg
 
 # NetworkManager applet
 exec --no-startup-id nm-applet 
