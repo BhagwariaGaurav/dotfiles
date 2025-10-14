@@ -34,7 +34,7 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/bunnie/lazy.lua<CR>")
+vim.keymap.set("n", "<leader>rc", "<cmd>e ~/.config/nvim/lua/bunnie/lazy.lua<CR>")
 vim.keymap.set("n", "<leader>ih", "<cmd>e ~/.config/hypr/hyprland.conf<CR>")
 vim.keymap.set("n", "<leader>i3", "<cmd>e ~/.config/i3/config<CR>")
 
@@ -58,6 +58,11 @@ vim.keymap.set("n", "<A-h>", "<C-W>h")
 vim.keymap.set("n", "<A-j>", "<C-W>j")
 vim.keymap.set("n", "<A-k>", "<C-W>k")
 vim.keymap.set("n", "<A-l>", "<C-W>l")
+
+vim.keymap.set("n", "<A-Up>", ":resize +2<CR>", { desc = "Increase window height" })
+vim.keymap.set("n", "<A-Down>", ":resize -2<CR>", { desc = "Decrease window height" })
+vim.keymap.set("n", "<A-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<A-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
 
 vim.keymap.set("n", "<leader>t", "<cmd>vsplit term://%:p:h//zsh<CR>")
 

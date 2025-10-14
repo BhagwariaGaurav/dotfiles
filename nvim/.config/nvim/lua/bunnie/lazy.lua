@@ -32,7 +32,6 @@ require('lazy').setup({
     { 'L3MON4D3/LuaSnip' },
     { 'saadparwaiz1/cmp_luasnip' },
     { "rafamadriz/friendly-snippets" },
-    -- lazy.nvim
     {
         'chomosuke/typst-preview.nvim',
         ft = 'typst',
@@ -54,25 +53,6 @@ require('lazy').setup({
         opts = {}
     },
 
-    --Themes
-    {
-        "metalelf0/black-metal-theme-neovim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require("black-metal").setup({
-                theme = "darkthrone",
-                variant = "dark",
-                code_style = {
-                    comments = "bold",
-                }
-
-            })
-            require("black-metal").load()
-        end,
-        enabled = true
-    },
-
     --Treesiiter
     {
         'nvim-treesitter/nvim-treesitter',
@@ -84,10 +64,7 @@ require('lazy').setup({
     { 'mbbill/undotree' },
     { 'tpope/vim-fugitive' },
     { 'nvim-treesitter/nvim-treesitter-context' },
-    { "folke/trouble.nvim" },
     { "stevearc/oil.nvim" },
-
-    --Lua line
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
@@ -113,3 +90,5 @@ require('lazy').setup({
         },
     }
 })
+
+
