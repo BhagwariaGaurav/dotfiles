@@ -38,29 +38,20 @@ require('lazy').setup({
         version = '1.*',
         opts = {}, -- lazy.nvim will implicitly calls `setup {}`
     },
-
-    --Fuzzy Finder
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.8',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
-
-    --Line Indenting
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         opts = {}
     },
-
-    --Treesiiter
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate'
     },
-
-    --Useful plugins
-    { 'theprimeagen/refactoring.nvim' },
     { 'mbbill/undotree' },
     { 'tpope/vim-fugitive' },
     { 'nvim-treesitter/nvim-treesitter-context' },
@@ -69,8 +60,6 @@ require('lazy').setup({
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
-
-    --Nvim-Surround
     {
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -81,8 +70,6 @@ require('lazy').setup({
             })
         end
     },
-
-    --Comment.nvim
     {
         'numToStr/Comment.nvim',
         opts = {
@@ -90,5 +77,3 @@ require('lazy').setup({
         },
     }
 })
-
-
