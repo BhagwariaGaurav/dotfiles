@@ -1,7 +1,7 @@
 /* Font */
 * {
-    font-family: "Fira Code", "IBM Plex Mono", "Roboto Mono", monospace;
-    font-weight: 600; 
+    font-family: inter;
+    font-weight: 500; 
     font-size: 16px;
 }
 

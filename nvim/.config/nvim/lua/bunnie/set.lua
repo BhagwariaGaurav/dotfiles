@@ -35,3 +35,5 @@ vim.cmd("highlight ColorColumn guibg=#333333")
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 vim.cmd.colorscheme("habamax")
+vim.opt.path:append({ ".", "**" })
+

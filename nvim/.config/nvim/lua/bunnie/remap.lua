@@ -65,4 +65,4 @@ vim.keymap.set("n", "<A-Left>", ":vertical resize -2<CR>", { desc = "Decrease wi
 vim.keymap.set("n", "<A-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
 
 vim.keymap.set("n", "<leader>t", "<cmd>vsplit term://%:p:h//zsh<CR>")
-
+vim.keymap.set("n", "<leader>n", "<cmd>e ~/notes<CR>")

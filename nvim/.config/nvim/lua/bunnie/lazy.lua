@@ -31,7 +31,7 @@ require('lazy').setup({
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'L3MON4D3/LuaSnip' },
     { 'saadparwaiz1/cmp_luasnip' },
-    { "rafamadriz/friendly-snippets" },
+    { 'rafamadriz/friendly-snippets' },
     {
         'chomosuke/typst-preview.nvim',
         ft = 'typst',
@@ -44,7 +44,7 @@ require('lazy').setup({
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     {
-        "lukas-reineke/indent-blankline.nvim",
+        'lukas-reineke/indent-blankline.nvim',
         main = "ibl",
         opts = {}
     },
@@ -55,13 +55,13 @@ require('lazy').setup({
     { 'mbbill/undotree' },
     { 'tpope/vim-fugitive' },
     { 'nvim-treesitter/nvim-treesitter-context' },
-    { "stevearc/oil.nvim" },
+    { 'stevearc/oil.nvim' },
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     {
-        "kylechui/nvim-surround",
+        'kylechui/nvim-surround',
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
         event = "VeryLazy",
         config = function()
@@ -75,5 +75,6 @@ require('lazy').setup({
         opts = {
             -- add any options here
         },
-    }
+    },
+    { 'OXY2DEV/markview.nvim' },
 })
