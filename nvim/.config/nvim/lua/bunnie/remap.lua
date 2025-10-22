@@ -66,3 +66,14 @@ vim.keymap.set("n", "<A-Right>", ":vertical resize +2<CR>", { desc = "Increase w
 
 vim.keymap.set("n", "<leader>t", "<cmd>vsplit term://%:p:h//zsh<CR>")
 vim.keymap.set("n", "<leader>n", "<cmd>e ~/notes<CR>")
+
+vim.api.nvim_create_user_command('Daily', function()
+  local date = os.date("%Y-%m-%d")
+  local dir = "~/notes/journal/"
+  local path = dir .. date .. ".md"
+  vim.fn.mkdir(vim.fn.expand(dir), "p")
+  vim.cmd("edit " .. path)
+end, {})
+
+vim.keymap.set('n', '<leader>jn', ':Daily<CR>', { desc = "Open today's journal" })
+

@@ -41,7 +41,10 @@ require('lazy').setup({
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.8',
-        dependencies = { 'nvim-lua/plenary.nvim' }
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+        }
     },
     {
         'lukas-reineke/indent-blankline.nvim',
@@ -58,7 +61,12 @@ require('lazy').setup({
     { 'stevearc/oil.nvim' },
     {
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' }
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+            config = function()
+                require('lualine').setup({})
+            end
+        }
     },
     {
         'kylechui/nvim-surround',
@@ -76,5 +84,4 @@ require('lazy').setup({
             -- add any options here
         },
     },
-    { 'OXY2DEV/markview.nvim' },
 })
