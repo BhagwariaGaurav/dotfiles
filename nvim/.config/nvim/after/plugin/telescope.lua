@@ -39,7 +39,7 @@ require('telescope').setup {
 require('telescope').setup({
   pickers = {
     find_files = {
-      theme = "ivy",
+      -- theme = "cursor",
     },
   },
 })
