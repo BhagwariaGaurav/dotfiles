@@ -64,7 +64,9 @@ require('lazy').setup({
         dependencies = {
             'nvim-tree/nvim-web-devicons',
             config = function()
-                require('lualine').setup({})
+                require('lualine').setup({
+                    options = { theme = require('lualine.themes._black_metal').get() }
+                })
             end
         }
     },
@@ -83,5 +85,18 @@ require('lazy').setup({
         opts = {
             -- add any options here
         },
+    },
+    {
+        "metalelf0/black-metal-theme-neovim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("black-metal").setup({
+                code_style = {
+                    comments = "bold"
+                }
+            })
+            require("black-metal").load()
+        end,
     },
 })
