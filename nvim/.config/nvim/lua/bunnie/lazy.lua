@@ -94,7 +94,8 @@ require('lazy').setup({
             require("black-metal").setup({
                 code_style = {
                     comments = "bold"
-                }
+                },
+                theme = "bathory",
             })
             require("black-metal").load()
         end,
