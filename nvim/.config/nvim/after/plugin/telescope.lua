@@ -37,11 +37,11 @@ require('telescope').setup {
 }
 
 require('telescope').setup({
-  pickers = {
-    find_files = {
-      -- theme = "cursor",
+    pickers = {
+        find_files = {
+            -- theme = "cursor",
+        },
     },
-  },
 })
 
 require('telescope').load_extension('fzf')
