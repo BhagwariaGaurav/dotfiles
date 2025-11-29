@@ -10,7 +10,6 @@ bindsym $mod+o exec ~/scripts/rofi_sys
 
 # Removes the top title bar
 default_border pixel 3
- 
 default_floating_border pixel 0
 
 set $mod Mod4
@@ -192,7 +191,7 @@ bindsym $mod+r mode "resize"
 
 # Auto-Startup apps
 # exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/New_rec2025-06-13_22-24.png
-exec_always --no-startup-id feh --bg-fill ~/walls/271046.jpg
+exec_always --no-startup-id feh --bg-fill ~/walls/minimalistic.jpg
 
 # NetworkManager applet
 

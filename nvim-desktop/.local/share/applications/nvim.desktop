@@ -4,4 +4,3 @@ Exec=kitty -- nvim %F
 Type=Application
 Icon=utilities-terminal
 MimeType=text/plain;
-
