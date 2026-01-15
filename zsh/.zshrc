@@ -117,3 +117,8 @@ export PATH="$HOME/.local/bin:$PATH"
 alias mail=neomutt
 alias lg='lazygit'
 alias t='tmux attach -t main || tmux new -s main'
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/bunnie/.lmstudio/bin"
+# End of LM Studio CLI section
+

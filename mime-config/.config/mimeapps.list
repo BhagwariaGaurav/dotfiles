@@ -6,7 +6,7 @@ text/plain=nvim.desktop
 
 [Added Associations]
 image/png=gimp.desktop;org.gnome.eog.desktop;
-application/pdf=libreoffice-draw.desktop;org.pwmt.zathura-pdf-poppler.desktop;
+application/pdf=firefox.desktop;libreoffice-draw.desktop;org.pwmt.zathura-pdf-poppler.desktop;
 image/jpeg=org.gnome.eog.desktop;
 text/html=gvim.desktop;firefox.desktop;libreoffice-writer.desktop;
 application/yaml=gvim.desktop;vim.desktop;nvim.desktop;
