@@ -10,8 +10,7 @@ case "$choice" in
         [[ -n "$pid" ]] && kill "$pid"
         ;;
     suspend)
-        slock && systemctl suspend -i
-        ;;
+    swaylock --color 000000 & sleep 1 && systemctl suspend        ;;
     reboot)
         systemctl reboot -i
         ;;
