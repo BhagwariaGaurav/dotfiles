@@ -131,6 +131,7 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
+        "reverse-scrolling": true,
         "format-icons": [
             "🌑",
             "🌘",
@@ -187,6 +188,7 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} | {format_source}",
+        "reverse-scrolling":true,
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": "{icon} {format_source}",
         "format-muted": "{format_source}",

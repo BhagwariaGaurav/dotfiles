@@ -108,18 +108,23 @@ source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
 export EDITOR=nvim
 export VISUAL=nvim
-
-alias v='nvim'
-
-export PATH=$PATH:/home/bunnie/.spicetify
+#export PATH=$PATH:/home/bunnie/.spicetify
 export PATH="$HOME.npm-global/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH=$HOME/.npm-global/bin:$PATH
+export QTWEBENGINE_FORCE_USE_GBM=1 
+
+alias v='nvim'
 alias mail=neomutt
 alias lg='lazygit'
 alias t='tmux attach -t main || tmux new -s main'
 
 export PATH=$PATH:$HOME/flutter/bin
 
+# Pyenv configuration
+# NOTE: If shell hangs on startup, check for stale pyenv lock files:
+#   rm -f ~/.pyenv/.lock
+#   rm -f ~/.pyenv/shims/.lock
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"

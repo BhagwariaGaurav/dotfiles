@@ -53,6 +53,7 @@ require('lazy').setup({
     },
     {
         'nvim-treesitter/nvim-treesitter',
+        branch = "main", 
         build = ':TSUpdate'
     },
     { 'mbbill/undotree' },
@@ -82,9 +83,7 @@ require('lazy').setup({
     },
     {
         'numToStr/Comment.nvim',
-        opts = {
-            -- add any options here
-        },
+        opts = {},
     },
     {
         "metalelf0/black-metal-theme-neovim",
