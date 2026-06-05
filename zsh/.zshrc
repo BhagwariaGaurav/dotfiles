@@ -108,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
 export EDITOR=nvim
 export VISUAL=nvim
-#export PATH=$PATH:/home/bunnie/.spicetify
+export PATH=$PATH:/home/bunnie/.spicetify
 export PATH="$HOME.npm-global/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$HOME/.npm-global/bin:$PATH
