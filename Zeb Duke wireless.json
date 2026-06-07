@@ -4,7 +4,7 @@
         "equalizer#0": {
             "balance": 0.0,
             "bypass": false,
-            "input-gain": -4.9,
+            "input-gain": -10.0,
             "left": {
                 "band0": {
                     "frequency": 75.0,
@@ -19,7 +19,7 @@
                 },
                 "band1": {
                     "frequency": 105.0,
-                    "gain": 9.810000000000002,
+                    "gain": 2.0,
                     "mode": "APO (DR)",
                     "mute": false,
                     "q": 0.699999988079071,
@@ -158,7 +158,7 @@
                 },
                 "band1": {
                     "frequency": 105.0,
-                    "gain": 9.810000000000002,
+                    "gain": 2.0,
                     "mode": "APO (DR)",
                     "mute": false,
                     "q": 0.699999988079071,
