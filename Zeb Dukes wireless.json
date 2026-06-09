@@ -204,7 +204,7 @@
             },
             "mode": "IIR",
             "num-bands": 12,
-            "output-gain": 0.0,
+            "output-gain": -6.0,
             "pitch-left": 0.0,
             "pitch-right": 0.0,
             "right": {
