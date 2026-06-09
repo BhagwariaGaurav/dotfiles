@@ -8,7 +8,7 @@
             "left": {
                 "band0": {
                     "frequency": 75.0,
-                    "gain": -8.43,
+                    "gain": -3.8800000000000026,
                     "mode": "APO (DR)",
                     "mute": false,
                     "q": 1.0700000524520874,
@@ -52,7 +52,7 @@
                 },
                 "band2": {
                     "frequency": 240.0,
-                    "gain": 6.950000000000003,
+                    "gain": 5.300000000000004,
                     "mode": "RLC (BT)",
                     "mute": false,
                     "q": 1.0,
@@ -63,7 +63,7 @@
                 },
                 "band3": {
                     "frequency": 436.29998779296875,
-                    "gain": 10.170000000000002,
+                    "gain": 8.149999999999999,
                     "mode": "APO (DR)",
                     "mute": false,
                     "q": 1.7599999904632568,
@@ -85,7 +85,7 @@
                 },
                 "band5": {
                     "frequency": 617.9000244140625,
-                    "gain": 3.990000000000002,
+                    "gain": 1.3699999999999974,
                     "mode": "APO (DR)",
                     "mute": false,
                     "q": 4.610000133514404,
@@ -96,7 +96,7 @@
                 },
                 "band6": {
                     "frequency": 900.0,
-                    "gain": 3.0600000000000023,
+                    "gain": 5.32,
                     "mode": "RLC (BT)",
                     "mute": false,
                     "q": 1.0,
@@ -107,7 +107,7 @@
                 },
                 "band7": {
                     "frequency": 1438.5999755859375,
-                    "gain": 3.3900000000000006,
+                    "gain": 3.200000000000003,
                     "mode": "APO (DR)",
                     "mute": false,
                     "q": 2.440000057220459,
@@ -118,7 +118,7 @@
                 },
                 "band8": {
                     "frequency": 2614.300048828125,
-                    "gain": 12.410000000000004,
+                    "gain": 17.1,
                     "mode": "APO (DR)",
                     "mute": false,
                     "q": 6.0,
@@ -129,7 +129,7 @@
                 },
                 "band9": {
                     "frequency": 3862.89990234375,
-                    "gain": 19.200000000000003,
+                    "gain": 17.050000000000004,
                     "mode": "APO (DR)",
                     "mute": false,
                     "q": 4.650000095367432,
@@ -147,7 +147,7 @@
             "right": {
                 "band0": {
                     "frequency": 75.0,
-                    "gain": -8.43,
+                    "gain": -3.8800000000000026,
                     "mode": "APO (DR)",
                     "mute": false,
                     "q": 1.0700000524520874,
@@ -191,7 +191,7 @@
                 },
                 "band2": {
                     "frequency": 240.0,
-                    "gain": 6.950000000000003,
+                    "gain": 5.300000000000004,
                     "mode": "RLC (BT)",
                     "mute": false,
                     "q": 1.0,
@@ -202,7 +202,7 @@
                 },
                 "band3": {
                     "frequency": 436.29998779296875,
-                    "gain": 10.170000000000002,
+                    "gain": 8.149999999999999,
                     "mode": "APO (DR)",
                     "mute": false,
                     "q": 1.7599999904632568,
@@ -224,7 +224,7 @@
                 },
                 "band5": {
                     "frequency": 617.9000244140625,
-                    "gain": 3.990000000000002,
+                    "gain": 1.3699999999999974,
                     "mode": "APO (DR)",
                     "mute": false,
                     "q": 4.610000133514404,
@@ -235,7 +235,7 @@
                 },
                 "band6": {
                     "frequency": 900.0,
-                    "gain": 3.0600000000000023,
+                    "gain": 5.32,
                     "mode": "RLC (BT)",
                     "mute": false,
                     "q": 1.0,
@@ -246,7 +246,7 @@
                 },
                 "band7": {
                     "frequency": 1438.5999755859375,
-                    "gain": 3.3900000000000006,
+                    "gain": 3.200000000000003,
                     "mode": "APO (DR)",
                     "mute": false,
                     "q": 2.440000057220459,
@@ -257,7 +257,7 @@
                 },
                 "band8": {
                     "frequency": 2614.300048828125,
-                    "gain": 12.410000000000004,
+                    "gain": 17.1,
                     "mode": "APO (DR)",
                     "mute": false,
                     "q": 6.0,
@@ -268,7 +268,7 @@
                 },
                 "band9": {
                     "frequency": 3862.89990234375,
-                    "gain": 19.200000000000003,
+                    "gain": 17.050000000000004,
                     "mode": "APO (DR)",
                     "mute": false,
                     "q": 4.650000095367432,
@@ -280,8 +280,48 @@
             },
             "split-channels": false
         },
+        "exciter#0": {
+            "amount": 2.0,
+            "blend": 0.0,
+            "bypass": false,
+            "ceil": 16000.0,
+            "ceil-active": false,
+            "harmonics": 8.5,
+            "input-gain": 0.0,
+            "output-gain": 0.0,
+            "scope": 5500.0
+        },
+        "limiter#0": {
+            "alr": false,
+            "alr-attack": 5.0,
+            "alr-knee": 0.0,
+            "alr-knee-smooth": -5.0,
+            "alr-release": 50.0,
+            "attack": 5.0,
+            "bypass": false,
+            "dithering": "None",
+            "gain-boost": false,
+            "input-gain": 0.0,
+            "input-to-link": -80.01,
+            "input-to-sidechain": -80.01,
+            "link-to-input": -80.01,
+            "link-to-sidechain": -80.01,
+            "lookahead": 5.0,
+            "mode": "Herm Thin",
+            "output-gain": 0.0,
+            "oversampling": "None",
+            "release": 20.0,
+            "sidechain-preamp": 0.0,
+            "sidechain-to-input": -80.01,
+            "sidechain-to-link": -80.01,
+            "sidechain-type": "Internal",
+            "stereo-link": 100.0,
+            "threshold": 0.0
+        },
         "plugins_order": [
-            "equalizer#0"
+            "exciter#0",
+            "equalizer#0",
+            "limiter#0"
         ]
     }
 }
