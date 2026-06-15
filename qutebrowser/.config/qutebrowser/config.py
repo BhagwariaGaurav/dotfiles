@@ -143,6 +143,8 @@ config.set("colors.webpage.darkmode.enabled", True)
 c.content.blocking.method = "both"
 c.content.blocking.enabled = True
 c.zoom.default = 125
+c.content.cache.maximum_pages = 2
+c.content.cache.size = 52428800
 
 # ================== Youtube Add Blocking ======================= {{{
 def filter_yt(info: interceptor.Request):
