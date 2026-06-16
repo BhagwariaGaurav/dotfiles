@@ -113,6 +113,7 @@ export PATH="$HOME.npm-global/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$HOME/.npm-global/bin:$PATH
 export QTWEBENGINE_FORCE_USE_GBM=1 
+export YAZI_CONFIG_HOME=~/.config/yazi yazi
 
 alias v='nvim'
 alias mail=neomutt
