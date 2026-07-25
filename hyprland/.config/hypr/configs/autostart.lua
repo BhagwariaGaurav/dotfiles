@@ -1,0 +1,9 @@
+hl.on("hyprland.start", function () 
+  hl.exec_cmd("nm-applet")
+  hl.exec_cmd("waybar & hyprpaper")
+  hl.exec_cmd("easyeffects --gapplication-service")
+  hl.exec_cmd("~/scripts/power_profile.sh")
+  hl.exec_cmd("wl-paste --type text --watch cliphist store")
+  hl.exec_cmd("wl-paste --type image --watch cliphist store")
+end)
+
