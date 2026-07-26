@@ -16,6 +16,8 @@ hl.bind(cfg.mod .. " + SHIFT + L", hl.dsp.exec_cmd("swaylock --color 000000"))
 hl.bind(cfg.mod .. " + C", hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"))
 hl.bind(cfg.mod .. " + O", hl.dsp.exec_cmd("~/scripts/rofi_sys"))
 hl.bind(cfg.mod .. " + T", hl.dsp.exec_cmd("kitty -e ~/scripts/tmux-sessionizer"))
+hl.bind(cfg.mod .. " + N", hl.dsp.exec_cmd("qutebrowser"))
+hl.bind(cfg.mod .. " + SHIFT + H", hl.dsp.layout("swapsplit"))
 hl.bind(cfg.mod .. " + UP", hl.dsp.exec_cmd("busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -200"))
 hl.bind(cfg.mod .. " + DOWN", hl.dsp.exec_cmd("busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +200"))
 
@@ -124,7 +126,7 @@ hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_S
 hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),   { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                  { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                  { locked = true, repeating = true })
-hl.bind("XF86Calculator",hl.dsp.exec_cmd("qalculate-qt"),                  { locked = true, repeating = true })
+hl.bind("XF86Calculator",hl.dsp.exec_cmd("qalculate-gtk"),                  { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })

@@ -1,236 +1,92 @@
-// -*- mode: jsonc -*-
+// ~/.config/waybar/config
 {
-    // "layer": "top", // Waybar at top layer
-    "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
-    "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/mode",
-        "hyprland/scratchpad"
-    ],
-    "modules-center": [
-        "hyprland/window"
-    ],
-    "modules-right": [
-        // "idle_inhibitor",
-        "pulseaudio",
-        //"network",
-        // "power-profiles-daemon",
-        "cpu",
-        "memory",
-        //  "temperature",
-        "backlight",
-        "hyprland/language",
-        "battery",
-        "clock",
-        "tray"
-    ],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "spacing": 0,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "pulseaudio#microphone", "cpu", "memory", "battery", "hyprland/language", "tray"],
+
+    // Workspaces shown as plain numbers — only existing/used ones are
+    // rendered, since there's no persistent-workspaces block forcing
+    // a fixed range into view
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "on-click": "activate",
+        "all-outputs": true
     },
-    "hyprland/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "hyprland/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": [
-            "",
-            ""
-        ],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
+
+    // Center clock, click to toggle date view
     "clock": {
-        "format": "{:%I:%M %p}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%A,%d-%m-%Y}"
+        "format": "\uf017  {:%H:%M}",
+        "format-alt": "\uf133  {:%a %d %b, %Y}",
+        "tooltip-format": "<tt><span size='17pt' weight='bold'>{calendar}</span></tt>",
+        "on-click": "shift"
     },
+
     "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+        "format": "\uf2db  {usage}%",
+        "interval": 2,
+        "tooltip": true
     },
+
     "memory": {
-        "format": "{}% "
+        "format": "\ue266  {percentage}%",
+        "interval": 2,
+        "tooltip-format": "Used: {used:0.1f}G / {total:0.1f}G"
     },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": [
-            "",
-            "",
-            ""
-        ]
+
+    // Speaker / output volume
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "\uf466  Muted",
+        "format-icons": {
+            "headphone": "\uf025",
+            "default": ["\uf026", "\uf027", "\uf028"]
+        },
+        "scroll-step": 5,
+        "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol"
     },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "reverse-scrolling": true,
-        "format-icons": [
-            "🌑",
-            "🌘",
-            "🌗",
-            "🌖",
-            "🌕"
-        ]
+
+    // Microphone / input volume, separate module instance
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "\uf130  {volume}%",
+        "format-source-muted": "\uf131  Muted",
+        "scroll-step": 5,
+        "on-click": "pamixer --default-source -t",
+        "on-click-right": "pavucontrol"
     },
+
+    // Battery / charging status
     "battery": {
-        "interval": 1,
+        "interval": 5,
         "states": {
-            // "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ⚡",
-        "format-plugged": "{capacity}% ",
+        "format": "{icon}  {capacity}%",
+        "format-charging": "\uf0e7  {capacity}%",
+        "format-plugged": "\uf1e6  {capacity}%",
         "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
     },
-    "battery#bat2": {
-        "bat": "BAT2"
+
+    // Current keyboard layout. If you have multiple keyboards attached,
+    // uncomment "keyboard-name" and set it to the device name from
+    // `hyprctl devices` (under "keyboard" entries)
+    "hyprland/language": {
+        "format": "\uf11c  {short}",
+        "format-en": "\uf11c  EN"
+        // "keyboard-name": "your-keyboard-name-here"
     },
-    "power-profiles-daemon": {
-        "format": "{icon}",
-        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-        "tooltip": true,
-        "format-icons": {
-            "default": "",
-            "performance": "",
-            "balanced": "",
-            "power-saver": ""
-        }
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} | {format_source}",
-        "reverse-scrolling":true,
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": "{icon} {format_source}",
-        "format-muted": "{format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "🎧",
-            "hands-free": "🎤",
-            "headset": "🎧",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    "custom/power": {
-        "format": "⏻ ",
-        "tooltip": false,
-        "menu": "on-click",
-        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-        "menu-actions": {
-            "shutdown": "shutdown",
-            "reboot": "reboot",
-            "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate"
-        }
+
+    // System tray — holds icons/applets for running background apps
+    "tray": {
+        "icon-size": 15,
+        "spacing": 10
     }
 }

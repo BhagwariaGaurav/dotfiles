@@ -1,93 +1,172 @@
-/* Font */
+/* ~/.config/waybar/style.css */
+
 * {
-    font-family: "Font Awesome 5 Free",inter;
-    font-weight: 500; 
-    font-size: 16px;
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
 }
 
-/* Main Waybar container */
 window#waybar {
-    background-color: black; 
-    color: #d8d8d8; 
-    transition: background-color 0.3s ease;
+    background: transparent;
 }
 
-/* Workspace Buttons */
+/* The bar itself — flat, square, pinned flush to the top edge */
+#waybar > box {
+    background-color: #0a0a0b;
+    border-bottom: 1px solid #2a2a2e;
+    padding: 0 8px;
+}
+
+/* Shared block look for module groups — hard rectangular edges */
+#workspaces,
+#clock,
+#pulseaudio,
+#pulseaudio.microphone,
+#cpu,
+#memory,
+#battery,
+#language,
+#tray {
+    background-color: #141416;
+    border: 1px solid #2a2a2e;
+    margin: 6px 3px;
+    padding: 0 12px;
+    color: #e4e4e7;
+}
+
+/* Workspaces */
+#workspaces {
+    padding: 0 4px;
+}
+
 #workspaces button {
-    padding: 6px 12px;
-    background-color: #141414;
-    color: #a8a8a8;
-    border-radius: 3px; 
-    border: 1px solid #1a1a1a;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-#workspaces button.focused {
-    background-color: #1f1f1f; 
-    color: #ffffff;
+    color: #71717a;
+    background: transparent;
+    padding: 0 10px;
+    margin: 4px 2px;
+    border: 1px solid transparent;
+    min-width: 18px;
 }
 
 #workspaces button.active {
-    border-bottom: 3px solid #ffffff;
-    color: #ffffff;
-    font-weight: bold;
+    color: #0a0a0b;
+    background-color: #d4d4d8;
+    border: 1px solid #d4d4d8;
+    font-weight: 700;
 }
 
 #workspaces button:hover {
-    background-color: #1b1b1b; 
+    background-color: #1f1f22;
+    border: 1px solid #3a3a3e;
+    color: #f4f4f5;
 }
 
-/* Modules */
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #tray, #mode, #temperature {
-    padding: 6px 12px;
-    background-color: #000000;
-    color: #cfcfcf;
-    border-radius: 3px;
-    margin: 2px;
-    /* box-shadow: inset 0 0 0 1px #1c1c1c; */
+/* Clock */
+#clock {
+    font-weight: 600;
+    color: #f4f4f5;
+    padding: 0 16px;
 }
 
-/* Battery States */
+/* CPU / Memory */
+#cpu, #memory {
+    color: #e4e4e7;
+}
+
+#cpu.warning, #memory.warning {
+    color: #eab676;
+    border-color: #eab676;
+}
+
+#cpu.critical, #memory.critical {
+    color: #e07b7b;
+    border-color: #e07b7b;
+}
+
+/* Battery */
+#battery {
+    color: #e4e4e7;
+}
+
 #battery.charging {
-    background-color: #1c2d1c; 
-    color: #c8ffc8;
+    color: #8fd19e;
+}
+
+#battery.warning:not(.charging) {
+    color: #eab676;
+    border-color: #eab676;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #2d1c1c;
-    color: #ffbebe;
-    animation: blink 0.5s steps(2) infinite alternate;
+    color: #e07b7b;
+    border-color: #e07b7b;
+    animation: blink 1.5s linear infinite;
 }
 
 @keyframes blink {
-    to { background-color: #5a2a2a; }
+    50% {
+        color: #f4f4f5;
+        border-color: #e07b7b;
+    }
 }
 
-/* Pulseaudio */
-#pulseaudio.muted {
-    background-color: #1a1a1a;
-    color: #888888;
+/* Keyboard layout indicator */
+#language {
+    color: #a1a1aa;
+    font-weight: 600;
 }
 
-/* Temperature Critical */
-#temperature.critical {
-    background-color: #2d1c1c;
-    color: #ffbebe;
+/* Audio */
+#pulseaudio {
+    color: #e4e4e7;
 }
 
-/* Network Disconnected */
-#network.disconnected {
-    background-color: #2a1a1a;
-    color: #ff9999;
-}
-
-/* Tray */
+/* Tray (running app applets) */
 #tray {
-    background-color: #141414;
+    padding: 0 12px;
 }
 
-/* Idle Inhibitor */
-#idle_inhibitor.activated {
-    background-color: #1c1c1c;
+#tray > .passive {
+    -gtk-icon-effect: dim;
 }
 
+#tray > .needs-attention {
+    -gtk-icon-effect: none;
+    background-color: #3a1f1f;
+    border-color: #e07b7b;
+}
+
+/* Subtle hover feedback across clickable modules — flat highlight, no rounding */
+#clock:hover,
+#pulseaudio:hover,
+#pulseaudio.microphone:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#language:hover {
+    background-color: #1f1f22;
+    border-color: #3a3a3e;
+}
+
+tooltip {
+    background-color: #0a0a0b;
+    border: 1px solid #2a2a2e;
+}
+
+tooltip label {
+    color: #e4e4e7;
+    padding: 4px;
+}
+
+#workspaces button:hover {
+    background: transparent;
+    background-color: transparent;
+    box-shadow: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    color: inherit;
+}
