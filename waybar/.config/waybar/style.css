@@ -19,20 +19,20 @@ window#waybar {
     padding: 0 8px;
 }
 
-/* Shared block look for module groups — hard rectangular edges */
+/* Shared block look for module groups — hard rectangular edges.
+   Grouped modules (audio, hardware) get ONE box each instead of
+   one per module, and their children below are unstyled/transparent. */
 #workspaces,
 #clock,
-#pulseaudio,
-#pulseaudio.microphone,
-#cpu,
-#memory,
+#audio,
+#hardware,
 #battery,
 #language,
 #tray {
     background-color: #141416;
     border: 1px solid #2a2a2e;
-    margin: 6px 3px;
-    padding: 0 12px;
+    margin: 6px 2px;
+    padding: 0 10px;
     color: #e4e4e7;
 }
 
@@ -58,31 +58,50 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background-color: #1f1f22;
-    border: 1px solid #3a3a3e;
-    color: #f4f4f5;
+    background: transparent;
+    background-color: transparent;
+    box-shadow: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    color: inherit;
 }
 
 /* Clock */
 #clock {
     font-weight: 600;
     color: #f4f4f5;
-    padding: 0 16px;
+    padding: 0 14px;
 }
 
-/* CPU / Memory */
+/* CPU / Memory — live inside #hardware, so no background/border
+   of their own, just a small gap between them */
 #cpu, #memory {
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0 6px;
     color: #e4e4e7;
 }
 
 #cpu.warning, #memory.warning {
     color: #eab676;
-    border-color: #eab676;
 }
 
 #cpu.critical, #memory.critical {
     color: #e07b7b;
-    border-color: #e07b7b;
+}
+
+/* Audio / Mic — live inside #audio, so no background/border
+   of their own, just a small gap between them */
+#pulseaudio,
+#pulseaudio.microphone {
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0 6px;
+    color: #e4e4e7;
 }
 
 /* Battery */
@@ -118,14 +137,9 @@ window#waybar {
     font-weight: 600;
 }
 
-/* Audio */
-#pulseaudio {
-    color: #e4e4e7;
-}
-
 /* Tray (running app applets) */
 #tray {
-    padding: 0 12px;
+    padding: 0 10px;
 }
 
 #tray > .passive {
@@ -138,12 +152,10 @@ window#waybar {
     border-color: #e07b7b;
 }
 
-/* Subtle hover feedback across clickable modules — flat highlight, no rounding */
+/* Subtle hover feedback across clickable module groups — flat highlight, no rounding */
 #clock:hover,
-#pulseaudio:hover,
-#pulseaudio.microphone:hover,
-#cpu:hover,
-#memory:hover,
+#audio:hover,
+#hardware:hover,
 #battery:hover,
 #language:hover {
     background-color: #1f1f22;
@@ -158,15 +170,4 @@ tooltip {
 tooltip label {
     color: #e4e4e7;
     padding: 4px;
-}
-
-#workspaces button:hover {
-    background: transparent;
-    background-color: transparent;
-    box-shadow: none;
-    border-top: none;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-    color: inherit;
 }
