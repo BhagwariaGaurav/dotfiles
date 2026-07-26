@@ -46,6 +46,15 @@ hl.window_rule({
     float = true,
 })
 
+hl.window_rule({
+    match = {
+        class = "qalculate-gtk",
+    },
+
+    float = true,
+    center = true,
+    size = "782 483",
+})
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
 -- uncomment all if you wish to use that.
