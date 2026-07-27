@@ -52,7 +52,7 @@
 
     // Speaker / output volume
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}  {volume}%",
         "format-muted": "\uf466 Muted",
         "format-icons": {
             "headphone": "\uf025",
