@@ -53,7 +53,7 @@ hl.window_rule({
 
     float = true,
     center = true,
-    size = "782 483",
+    size = "782 541",
 })
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
