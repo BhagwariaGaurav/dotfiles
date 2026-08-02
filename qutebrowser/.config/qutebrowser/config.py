@@ -159,4 +159,151 @@ def filter_yt(info: interceptor.Request):
 
 
 interceptor.register(filter_yt)
+# }}}
 
+# ================================================================
+# ================== "daily dose of rice" theme =================
+# ================================================================
+# Cream-on-black palette pulled from your rofi launcher / wallpaper.
+# Swap FONT_FAMILY below if you're not using a nerd font.
+
+BG        = "#0a0a0a"   # near-black background
+BG_ALT    = "#141414"   # slightly lighter black for panels/tabs
+FG        = "#c9c2b3"   # muted warm grey-cream (body text)
+FG_DIM    = "#6e6a60"   # dimmed/inactive text
+CREAM     = "#e8dfd0"   # the highlighted-row cream from your launcher
+CREAM_DIM = "#a89f8c"   # cream but muted, for secondary accents
+BLACK     = "#000000"
+BORDER    = "#2a2620"   # subtle warm-grey border/divider
+
+FONT_FAMILY = "JetBrainsMono Nerd Font"
+FONT_SIZE   = "11pt"
+
+# ---- Fonts --------------------------------------------------------------
+c.fonts.default_family = FONT_FAMILY
+c.fonts.default_size = FONT_SIZE
+c.fonts.completion.entry = f"{FONT_SIZE} {FONT_FAMILY}"
+c.fonts.completion.category = f"bold {FONT_SIZE} {FONT_FAMILY}"
+c.fonts.debug_console = f"{FONT_SIZE} {FONT_FAMILY}"
+c.fonts.downloads = f"{FONT_SIZE} {FONT_FAMILY}"
+c.fonts.hints = f"bold {FONT_SIZE} {FONT_FAMILY}"
+c.fonts.keyhint = f"{FONT_SIZE} {FONT_FAMILY}"
+c.fonts.messages.error = f"{FONT_SIZE} {FONT_FAMILY}"
+c.fonts.messages.info = f"{FONT_SIZE} {FONT_FAMILY}"
+c.fonts.messages.warning = f"{FONT_SIZE} {FONT_FAMILY}"
+c.fonts.prompts = f"{FONT_SIZE} {FONT_FAMILY}"
+c.fonts.statusbar = f"{FONT_SIZE} {FONT_FAMILY}"
+c.fonts.tabs.selected = f"{FONT_SIZE} {FONT_FAMILY}"
+c.fonts.tabs.unselected = f"{FONT_SIZE} {FONT_FAMILY}"
+
+# ---- Completion menu (the command/search dropdown, styled like rofi) ----
+c.colors.completion.fg = FG
+c.colors.completion.odd.bg = BG
+c.colors.completion.even.bg = BG
+c.colors.completion.category.fg = CREAM
+c.colors.completion.category.bg = BG_ALT
+c.colors.completion.category.border.top = BORDER
+c.colors.completion.category.border.bottom = BORDER
+c.colors.completion.item.selected.fg = BLACK
+c.colors.completion.item.selected.bg = CREAM
+c.colors.completion.item.selected.border.top = CREAM
+c.colors.completion.item.selected.border.bottom = CREAM
+c.colors.completion.item.selected.match.fg = BLACK
+c.colors.completion.match.fg = CREAM
+c.colors.completion.scrollbar.fg = FG_DIM
+c.colors.completion.scrollbar.bg = BG
+
+# ---- Command / prompt / message bars ----
+c.colors.prompts.fg = FG
+c.colors.prompts.bg = BG_ALT
+c.colors.prompts.border = f"1px solid {BORDER}"
+c.colors.prompts.selected.bg = CREAM
+c.colors.prompts.selected.fg = BLACK
+
+c.colors.messages.info.fg = FG
+c.colors.messages.info.bg = BG
+c.colors.messages.info.border = BORDER
+c.colors.messages.warning.fg = BLACK
+c.colors.messages.warning.bg = CREAM_DIM
+c.colors.messages.warning.border = CREAM_DIM
+c.colors.messages.error.fg = BG
+c.colors.messages.error.bg = "#c96a5a"   # muted warm red, still fits the palette
+c.colors.messages.error.border = "#c96a5a"
+
+# ---- Statusbar ----
+c.colors.statusbar.normal.fg = FG
+c.colors.statusbar.normal.bg = BG
+c.colors.statusbar.insert.fg = BLACK
+c.colors.statusbar.insert.bg = CREAM
+c.colors.statusbar.passthrough.fg = BLACK
+c.colors.statusbar.passthrough.bg = CREAM_DIM
+c.colors.statusbar.command.fg = FG
+c.colors.statusbar.command.bg = BG
+c.colors.statusbar.caret.fg = BLACK
+c.colors.statusbar.caret.bg = CREAM
+c.colors.statusbar.caret.selection.fg = BLACK
+c.colors.statusbar.caret.selection.bg = CREAM_DIM
+c.colors.statusbar.url.fg = FG
+c.colors.statusbar.url.success.http.fg = FG
+c.colors.statusbar.url.success.https.fg = CREAM
+c.colors.statusbar.url.hover.fg = CREAM_DIM
+c.colors.statusbar.url.warn.fg = "#c9a25a"
+c.colors.statusbar.url.error.fg = "#c96a5a"
+c.colors.statusbar.progress.bg = CREAM
+
+# ---- Tabs ----
+c.colors.tabs.bar.bg = BG
+c.colors.tabs.odd.fg = FG_DIM
+c.colors.tabs.odd.bg = BG_ALT
+c.colors.tabs.even.fg = FG_DIM
+c.colors.tabs.even.bg = BG_ALT
+c.colors.tabs.selected.odd.fg = BLACK
+c.colors.tabs.selected.odd.bg = CREAM
+c.colors.tabs.selected.even.fg = BLACK
+c.colors.tabs.selected.even.bg = CREAM
+c.colors.tabs.pinned.odd.bg = "#20241f"
+c.colors.tabs.pinned.even.bg = "#20241f"
+c.colors.tabs.pinned.selected.odd.bg = CREAM_DIM
+c.colors.tabs.pinned.selected.even.bg = CREAM_DIM
+c.colors.tabs.indicator.start = CREAM_DIM
+c.colors.tabs.indicator.stop = CREAM
+c.colors.tabs.indicator.error = "#c96a5a"
+
+# Minimal tab layout, matching the launcher's clean rows
+c.tabs.position = "top"
+c.tabs.show = "multiple"       # hide the bar entirely when only 1 tab
+c.tabs.padding = {"top": 6, "bottom": 6, "left": 10, "right": 10}
+c.tabs.indicator.width = 2
+c.tabs.title.format = "{index}: {current_title}"
+c.tabs.favicons.scale = 0.9
+
+# ---- Downloads panel ----
+c.colors.downloads.bar.bg = BG
+c.colors.downloads.start.fg = BLACK
+c.colors.downloads.start.bg = CREAM_DIM
+c.colors.downloads.stop.fg = BLACK
+c.colors.downloads.stop.bg = CREAM
+c.colors.downloads.error.fg = BG
+c.colors.downloads.error.bg = "#c96a5a"
+
+# ---- Hints (the letters that appear over links) ----
+c.colors.hints.fg = BLACK
+c.colors.hints.bg = CREAM
+c.colors.hints.match.fg = CREAM_DIM
+
+# ---- Keyhint popup ----
+c.colors.keyhint.fg = FG
+c.colors.keyhint.suffix.fg = CREAM
+c.colors.keyhint.bg = BG_ALT
+
+# ---- Context menu ----
+c.colors.contextmenu.menu.bg = BG_ALT
+c.colors.contextmenu.menu.fg = FG
+c.colors.contextmenu.selected.bg = CREAM
+c.colors.contextmenu.selected.fg = BLACK
+c.colors.contextmenu.disabled.fg = FG_DIM
+
+# ---- Web page dark-mode tuning (so pages read closer to your palette) ----
+c.colors.webpage.bg = BG
+config.set("colors.webpage.darkmode.policy.images", "never")
+config.set("colors.webpage.darkmode.contrast", 0.0)

@@ -1,5 +1,4 @@
-# mako notification config — catppuccin mocha palette
-
+# mako notification config — warm monochrome palette
 font=JetBrains Mono 12
 format=<b>%a</b> · %s\n%b
 sort=-time
@@ -12,12 +11,12 @@ width=380
 margin=12
 padding=14,16
 border-size=1
-border-radius=10
+border-radius=0
 
-# base colors (mocha)
-background-color=#1e1e2eee
-text-color=#cdd6f4
-border-color=#585b70
+# base colors (warm)
+background-color=#0b0a08ee
+text-color=#e8e0d4
+border-color=#3e372c
 
 # icons
 icons=0
@@ -37,46 +36,44 @@ max-history=5
 # -------------------------------------------------------
 # urgency levels
 # -------------------------------------------------------
-
 [urgency=low]
-background-color=#1e1e2ecc
-border-color=#45475a
-text-color=#a6adc8
+background-color=#0b0a08cc
+border-color=#2e2a24
+text-color=#a89e8e
 default-timeout=5000
 
 [urgency=normal]
-background-color=#1e1e2eee
-border-color=#585b70
-text-color=#cdd6f4
+background-color=#0b0a08ee
+border-color=#3e372c
+text-color=#e8e0d4
 default-timeout=8000
 
 [urgency=high]
-background-color=#1e1e2e
-border-color=#f38ba8
-text-color=#cdd6f4
+background-color=#0b0a08
+border-color=#e0847b
+text-color=#e8e0d4
 default-timeout=0
 
 # -------------------------------------------------------
 # app-specific overrides
 # -------------------------------------------------------
-
 [app-name="lightcord"]
-background-color=#1e1e2eee
-border-color=#89b4fa
-text-color=#cdd6f4
+background-color=#0b0a08ee
+border-color=#7a95c9
+text-color=#e8e0d4
 
 [summary~="^log-.*"]
-border-color=#a6e3a1
-text-color=#a6e3a1
+border-color=#8fd19e
+text-color=#8fd19e
 
 [app-name="discord"]
-border-color=#89b4fa
+border-color=#7a95c9
 
 [app-name="spotify"]
-border-color=#a6e3a1
+border-color=#9bb37d
 
 [app-name="playerctl"]
-border-color=#cba6f7
+border-color=#b39ddb
 
 # silent/suppress rules
 [app-name="lightcord" summary~="(orz|ORZ|sto|STO|otl|OTL)"]
