@@ -64,10 +64,11 @@ hl.bind(
         "file=" .. screenshot_dir .. "/$(date +%Y-%m-%d_%H-%M-%S).png; grim \"$file\" && wl-copy < \"$file\" && notify-send 'Screenshot' 'Saved and copied to clipboard'"
     )
 )
+
 hl.bind(
     cfg.mod .. " + U",
     hl.dsp.exec_cmd(
-        "grim -g \"$(slurp)\" - | wl-copy && notify-send 'Screenshot copied to clipboard'"
+        "REGION=$(slurp) && grim -g \"$REGION\" - | wl-copy && notify-send 'Screenshot copied to clipboard'"
     )
 )
 
