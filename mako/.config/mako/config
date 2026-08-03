@@ -2,7 +2,7 @@
 font=JetBrains Mono 12
 format=<b>%a</b> · %s\n%b
 sort=-time
-output=DP-2
+output=eDP-1
 layer=overlay
 anchor=top-right
 
@@ -23,7 +23,7 @@ icons=0
 max-icon-size=32
 
 # timing
-default-timeout=8000
+default-timeout=4000
 ignore-timeout=1
 
 # text
@@ -46,7 +46,7 @@ default-timeout=5000
 background-color=#0b0a08ee
 border-color=#3e372c
 text-color=#e8e0d4
-default-timeout=8000
+default-timeout=1000
 
 [urgency=high]
 background-color=#0b0a08
