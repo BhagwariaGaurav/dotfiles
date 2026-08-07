@@ -132,3 +132,8 @@ eval "$(pyenv init --path)"
 
 # working invidious server for ytfzf
 export invidious_instance="https://invidious.flokinet.to"
+
+alias yt='ytfzf'
+alias ytc='ytfzf --channel'
+alias yta='ytfzf --audio'
+alias yth='ytfzf -H'
