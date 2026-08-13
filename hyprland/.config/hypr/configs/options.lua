@@ -11,7 +11,7 @@ hl.config({
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("XCURSOR_THEME", "WhiteSur cursors")
+hl.env("XCURSOR_THEME", "clay-white-cursors")
 
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("invidious_instance","https://invidious.flokinet.to")
