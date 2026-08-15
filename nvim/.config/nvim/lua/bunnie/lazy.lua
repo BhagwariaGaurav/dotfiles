@@ -53,7 +53,7 @@ require('lazy').setup({
     },
     {
         'nvim-treesitter/nvim-treesitter',
-        branch = "main", 
+        branch = "main",
         build = ':TSUpdate'
     },
     { 'mbbill/undotree' },
@@ -99,4 +99,24 @@ require('lazy').setup({
             require("black-metal").load()
         end,
     },
+
+    {
+        "epwalsh/obsidian.nvim",
+        version = "*",
+        lazy = true,
+        ft = "markdown",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            workspaces = {
+                { name = "notes", path = "~/notes" },
+            },
+            daily_notes = {
+                folder = "daily",
+                date_format = "%Y-%m-%d",
+            },
+            completion = {
+                nvim_cmp = true, -- set false if you don't use nvim-cmp
+            },
+        },
+    }
 })
