@@ -114,6 +114,9 @@ require('lazy').setup({
                 folder = "daily",
                 date_format = "%Y-%m-%d",
             },
+            study_notes = {
+                folder = "learning",
+            },
             completion = {
                 nvim_cmp = true, -- set false if you don't use nvim-cmp
             },
