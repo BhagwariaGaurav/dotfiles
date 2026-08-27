@@ -18,14 +18,15 @@
         "all-outputs": true
     },
 
-    // Center clock, click to toggle date view
-    "clock": {
-        "format": "\uf017 {:%I:%M %p}",
-        "format-alt": "\uf133 {:%a %d %b, %Y}",
-        "tooltip-format": "<tt><span size='17pt' weight='bold'>{calendar}</span></tt>",
-        "on-click": "shift"
-    },
-
+"clock": {
+    "format": "\uf017 {:%I:%M %p}",
+    "format-alt": "\uf133 {:%a %d %b, %Y}",
+    "tooltip-format": "<tt><span size='17pt' weight='bold'>{calendar}</span></tt>",
+    "on-click": "shift",
+    "on-scroll-up": "brightnessctl set 5%+",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "smooth-scrolling-threshold": 1
+},
     // Speaker + mic grouped into a single visual block
     "group/audio": {
         "orientation": "horizontal",
