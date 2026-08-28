@@ -3,7 +3,7 @@ hl.config({
         kb_layout  = "us,us,ru",
         kb_variant = "colemak_dh,,",
         kb_model   = "",
-        kb_options = "altwin:swap_lalt_lwin,grp:win_space_toggle",
+        kb_options = "grp:win_space_toggle",
         kb_rules   = "",
 
         follow_mouse = 1,
