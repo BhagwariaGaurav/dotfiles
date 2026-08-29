@@ -1,4 +1,5 @@
 /* ~/.config/waybar/style.css */
+
 * {
     font-family: "Iosevka", "Font Awesome 6 Free", sans-serif;
     font-size: 13px;
@@ -6,15 +7,18 @@
     border: none;
     border-radius: 2;
 }
+
 window#waybar {
     background: transparent;
 }
+
 /* The bar itself — flat, square, pinned flush to the top edge */
 #waybar > box {
     background-color: #000000;
-    border-bottom: 1px solid #2e2a24;
+    border-bottom: 1px solid #2a2a2a;
     padding: 0 8px;
 }
+
 /* Shared block look for module groups — hard rectangular edges.
    Grouped modules (audio, hardware) get ONE box each instead of
    one per module, and their children below are unstyled/transparent. */
@@ -25,30 +29,34 @@ window#waybar {
 #battery,
 #language,
 #tray {
-    background-color: #16140f;
-    border: 1px solid #2e2a24;
+    background-color: #141414;
+    border: 1px solid #2a2a2a;
     margin: 6px 2px;
     padding: 0 10px;
-    color: #e8e0d4;
+    color: #e0e0e0;
 }
+
 /* Workspaces */
 #workspaces {
     padding: 0 4px;
 }
+
 #workspaces button {
-    color: #7a7166;
+    color: #6e6e6e;
     background: transparent;
     padding: 0 10px;
     margin: 4px 2px;
     border: 1px solid transparent;
     min-width: 18px;
 }
+
 #workspaces button.active {
-    color: #0a0a0b;
-    background-color: #d4c4a8;
-    border: 1px solid #d4c4a8;
+    color: #0a0a0a;
+    background-color: #e8e8e8;
+    border: 1px solid #e8e8e8;
     font-weight: 700;
 }
+
 #workspaces button:hover {
     background: transparent;
     background-color: transparent;
@@ -59,12 +67,14 @@ window#waybar {
     border-right: none;
     color: inherit;
 }
+
 /* Clock */
 #clock {
     font-weight: 600;
-    color: #f5f0e6;
+    color: #f5f5f5;
     padding: 0 14px;
 }
+
 /* CPU / Memory — live inside #hardware, so no background/border
    of their own, just a small gap between them */
 #cpu, #memory {
@@ -72,14 +82,17 @@ window#waybar {
     border: none;
     margin: 0;
     padding: 0 6px;
-    color: #e8e0d4;
+    color: #e0e0e0;
 }
+
 #cpu.warning, #memory.warning {
     color: #eab676;
 }
+
 #cpu.critical, #memory.critical {
     color: #e07b7b;
 }
+
 /* Audio / Mic — live inside #audio, so no background/border
    of their own, just a small gap between them */
 #pulseaudio,
@@ -88,61 +101,73 @@ window#waybar {
     border: none;
     margin: 0;
     padding: 0 6px;
-    color: #e8e0d4;
+    color: #e0e0e0;
 }
+
 /* Battery */
 #battery {
-    color: #e8e0d4;
+    color: #e0e0e0;
 }
+
 #battery.charging {
     color: #8fd19e;
 }
+
 #battery.warning:not(.charging) {
     color: #eab676;
     border-color: #eab676;
 }
+
 #battery.critical:not(.charging) {
     color: #e07b7b;
     border-color: #e07b7b;
     animation: blink 1.5s linear infinite;
 }
+
 @keyframes blink {
     50% {
-        color: #f5f0e6;
+        color: #f5f5f5;
         border-color: #e07b7b;
     }
 }
+
 /* Keyboard layout indicator */
 #language {
-    color: #a89e8e;
+    color: #999999;
     font-weight: 600;
 }
+
 /* Tray (running app applets) */
 #tray {
     padding: 0 10px;
 }
+
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
+
 #tray > .needs-attention {
     -gtk-icon-effect: none;
-    background-color: #3a1f1f;
+    background-color: #1a1a1a;
     border-color: #e07b7b;
 }
+
 /* Subtle hover feedback across clickable module groups — flat highlight, no rounding */
 #clock:hover,
 #audio:hover,
 #hardware:hover,
 #battery:hover,
 #language:hover {
-    background-color: #201d16;
-    border-color: #3e372c;
+    background-color: #1c1c1c;
+    border-color: #333333;
 }
+
 tooltip {
-    background-color: #0b0a08;
-    border: 1px solid #2e2a24;
+    background-color: #0a0a0a;
+    border: 1px solid #2a2a2a;
 }
+
 tooltip label {
-    color: #e8e0d4;
+    color: #e0e0e0;
     padding: 4px;
 }
