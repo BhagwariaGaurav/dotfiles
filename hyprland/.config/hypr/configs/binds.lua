@@ -21,6 +21,13 @@ hl.bind(cfg.mod .. " + SHIFT + H", hl.dsp.layout("swapsplit"))
 hl.bind(cfg.mod .. " + UP", hl.dsp.exec_cmd("busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -200"))
 hl.bind(cfg.mod .. " + DOWN", hl.dsp.exec_cmd("busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +200"))
 hl.bind(cfg.mod .. " + Z", hl.dsp.exec_cmd("~/scripts/book-open.sh"))
+hl.bind(cfg.mod .. " + Tab", function()
+    -- Change focus to another window
+    hl.dispatch(hl.dsp.window.cycle_next())
+    -- Bring it to the top 
+    hl.dispatch(hl.dsp.window.bring_to_top())
+end)
+
 
 
 hl.bind(cfg.mod .. " + R", hl.dsp.submap("resize"))
