@@ -178,6 +178,7 @@ GREY_DIM  = "#5a5650"   # muted grey, tertiary accent
 BLACK     = "#000000"
 BORDER    = "#1c1c1c"   # subtle border/divider
 RED       = "#e5484d"   # the "hint of red" accent
+WHITE     = "#ffffff"
 RED_DIM   = "#6e2224"   # muted/dark red for subtler accents
 RED_BRIGHT= "#ff3b30"   # sharp red for errors/critical states
 
@@ -294,7 +295,8 @@ c.colors.downloads.error.bg = RED_DIM
 
 # ---- Hints (the letters that appear over links) ----
 c.colors.hints.fg = BLACK
-c.colors.hints.bg = RED
+#c.colors.hints.bg = RED
+c.colors.hints.bg = WHITE
 c.colors.hints.match.fg = "#7a1c1c"
 
 # ---- Keyhint popup ----
