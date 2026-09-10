@@ -162,25 +162,33 @@ interceptor.register(filter_yt)
 # }}}
 
 # ================================================================
-# ================== "shades of black" theme =====================
+# ================ "graphite" theme (slate + ice) ================
 # ================================================================
-# Near-pure-black tiers with a single red accent (matches the
-# terminal cursor / low-battery red from your setup). Swap
-# FONT_FAMILY below if you're not using a nerd font.
+# A sleek, minimal, low-contrast graphite base with a single cool
+# accent (ice blue / cyan) used sparingly for selection, matches,
+# and interactive states. Warning and error tones are handled with
+# desaturated amber and muted red so they stay legible without
+# fighting the accent for attention. Swap FONT_FAMILY if you're not
+# using a nerd font.
 
-BG        = "#000000"   # true black background
-BG_ALT    = "#0c0c0c"   # slightly lifted black for panels/tabs
-BG_ALT2   = "#161616"   # a touch lighter still, for pinned/hover states
-FG        = "#b8b4ab"   # soft grey body text
-FG_DIM    = "#4a4640"   # dimmed/inactive text
-GREY      = "#8a867d"   # mid grey, general secondary accent
-GREY_DIM  = "#5a5650"   # muted grey, tertiary accent
+BG        = "#0c0d10"   # near-black background, very slight blue cast
+BG_ALT    = "#14161a"   # panels / tab bar
+BG_ALT2   = "#1c1f24"   # hover / pinned / selected surfaces
+FG        = "#c7cbd1"   # soft off-white body text
+FG_DIM    = "#6b7078"   # dimmed/inactive text (readable at a glance)
+GREY      = "#9aa0a8"   # mid grey, general secondary accent
+GREY_DIM  = "#585d64"   # muted grey, tertiary accent
 BLACK     = "#000000"
-BORDER    = "#1c1c1c"   # subtle border/divider
-RED       = "#e5484d"   # the "hint of red" accent
-WHITE     = "#ffffff"
-RED_DIM   = "#6e2224"   # muted/dark red for subtler accents
-RED_BRIGHT= "#ff3b30"   # sharp red for errors/critical states
+WHITE     = "#f4f6f8"
+BORDER    = "#22252b"   # subtle border/divider
+
+ACCENT       = "#5eb0d8"   # ice blue — primary accent (selection, links, hints)
+ACCENT_DIM   = "#274652"   # muted/dark accent for subtle backgrounds
+ACCENT_BRIGHT= "#8fd4f5"   # brighter accent for high-emphasis states
+
+AMBER     = "#c9a25a"   # caution (e.g. insecure but loaded pages)
+DANGER    = "#e0605a"   # muted red — errors only, used sparingly
+DANGER_BRIGHT = "#ff6b61"  # sharper red for critical/failed states
 
 FONT_FAMILY = "JetBrainsMono Nerd Font"
 FONT_SIZE   = "11pt"
@@ -212,10 +220,10 @@ c.colors.completion.category.border.top = BORDER
 c.colors.completion.category.border.bottom = BORDER
 c.colors.completion.item.selected.fg = FG
 c.colors.completion.item.selected.bg = BG_ALT2
-c.colors.completion.item.selected.border.top = RED_DIM
-c.colors.completion.item.selected.border.bottom = RED_DIM
-c.colors.completion.item.selected.match.fg = RED
-c.colors.completion.match.fg = RED
+c.colors.completion.item.selected.border.top = ACCENT_DIM
+c.colors.completion.item.selected.border.bottom = ACCENT_DIM
+c.colors.completion.item.selected.match.fg = ACCENT_BRIGHT
+c.colors.completion.match.fg = ACCENT
 c.colors.completion.scrollbar.fg = FG_DIM
 c.colors.completion.scrollbar.bg = BG
 
@@ -224,38 +232,38 @@ c.colors.prompts.fg = FG
 c.colors.prompts.bg = BG_ALT
 c.colors.prompts.border = f"1px solid {BORDER}"
 c.colors.prompts.selected.bg = BG_ALT2
-c.colors.prompts.selected.fg = RED
+c.colors.prompts.selected.fg = ACCENT
 
 c.colors.messages.info.fg = FG
 c.colors.messages.info.bg = BG
 c.colors.messages.info.border = BORDER
 c.colors.messages.warning.fg = BLACK
-c.colors.messages.warning.bg = GREY_DIM
-c.colors.messages.warning.border = GREY_DIM
+c.colors.messages.warning.bg = AMBER
+c.colors.messages.warning.border = AMBER
 c.colors.messages.error.fg = FG
-c.colors.messages.error.bg = RED_DIM
-c.colors.messages.error.border = RED
+c.colors.messages.error.bg = "#3a1f1d"
+c.colors.messages.error.border = DANGER
 
 # ---- Statusbar ----
 c.colors.statusbar.normal.fg = FG
 c.colors.statusbar.normal.bg = BG
 c.colors.statusbar.insert.fg = BLACK
-c.colors.statusbar.insert.bg = RED
+c.colors.statusbar.insert.bg = ACCENT
 c.colors.statusbar.passthrough.fg = FG
-c.colors.statusbar.passthrough.bg = RED_DIM
+c.colors.statusbar.passthrough.bg = ACCENT_DIM
 c.colors.statusbar.command.fg = FG
 c.colors.statusbar.command.bg = BG
 c.colors.statusbar.caret.fg = BLACK
-c.colors.statusbar.caret.bg = RED
+c.colors.statusbar.caret.bg = ACCENT
 c.colors.statusbar.caret.selection.fg = FG
-c.colors.statusbar.caret.selection.bg = RED_DIM
+c.colors.statusbar.caret.selection.bg = ACCENT_DIM
 c.colors.statusbar.url.fg = FG
-c.colors.statusbar.url.success.http.fg = FG
-c.colors.statusbar.url.success.https.fg = GREY
-c.colors.statusbar.url.hover.fg = RED
-c.colors.statusbar.url.warn.fg = "#c9a25a"
-c.colors.statusbar.url.error.fg = RED_BRIGHT
-c.colors.statusbar.progress.bg = RED
+c.colors.statusbar.url.success.https.fg = FG        # secure — normal, unremarkable
+c.colors.statusbar.url.success.http.fg = AMBER       # insecure but loaded — caution
+c.colors.statusbar.url.hover.fg = ACCENT
+c.colors.statusbar.url.warn.fg = AMBER
+c.colors.statusbar.url.error.fg = DANGER_BRIGHT      # broken/failed — most severe
+c.colors.statusbar.progress.bg = ACCENT
 
 # ---- Tabs ----
 c.colors.tabs.bar.bg = BG
@@ -267,16 +275,16 @@ c.colors.tabs.selected.odd.fg = FG
 c.colors.tabs.selected.odd.bg = BG_ALT2
 c.colors.tabs.selected.even.fg = FG
 c.colors.tabs.selected.even.bg = BG_ALT2
-c.colors.tabs.pinned.odd.bg = "#141414"
-c.colors.tabs.pinned.even.bg = "#141414"
-c.colors.tabs.pinned.selected.odd.bg = RED_DIM
-c.colors.tabs.pinned.selected.even.bg = RED_DIM
+c.colors.tabs.pinned.odd.bg = "#181a1e"
+c.colors.tabs.pinned.even.bg = "#181a1e"
+c.colors.tabs.pinned.selected.odd.bg = ACCENT_DIM
+c.colors.tabs.pinned.selected.even.bg = ACCENT_DIM
 c.colors.tabs.indicator.start = GREY_DIM
-c.colors.tabs.indicator.stop = RED
-c.colors.tabs.indicator.error = RED_BRIGHT
+c.colors.tabs.indicator.stop = ACCENT
+c.colors.tabs.indicator.error = DANGER_BRIGHT
 
-# Minimal tab layout, matching a clean row look, red underline on the
-# active tab so it still pops against the near-black bar.
+# Minimal tab layout — thin accent underline on the active tab so it
+# reads clearly against the graphite bar without shouting.
 c.tabs.position = "top"
 c.tabs.show = "multiple"       # hide the bar entirely when only 1 tab
 c.tabs.padding = {"top": 6, "bottom": 6, "left": 10, "right": 10}
@@ -291,24 +299,23 @@ c.colors.downloads.start.bg = GREY_DIM
 c.colors.downloads.stop.fg = FG
 c.colors.downloads.stop.bg = BG_ALT2
 c.colors.downloads.error.fg = FG
-c.colors.downloads.error.bg = RED_DIM
+c.colors.downloads.error.bg = "#3a1f1d"
 
 # ---- Hints (the letters that appear over links) ----
 c.colors.hints.fg = BLACK
-#c.colors.hints.bg = RED
-c.colors.hints.bg = WHITE
-c.colors.hints.match.fg = "#7a1c1c"
+c.colors.hints.bg = ACCENT_BRIGHT
+c.colors.hints.match.fg = "#1c4a5e"
 
 # ---- Keyhint popup ----
 c.colors.keyhint.fg = FG
-c.colors.keyhint.suffix.fg = RED
+c.colors.keyhint.suffix.fg = ACCENT
 c.colors.keyhint.bg = BG_ALT
 
 # ---- Context menu ----
 c.colors.contextmenu.menu.bg = BG_ALT
 c.colors.contextmenu.menu.fg = FG
 c.colors.contextmenu.selected.bg = BG_ALT2
-c.colors.contextmenu.selected.fg = RED
+c.colors.contextmenu.selected.fg = ACCENT
 c.colors.contextmenu.disabled.fg = FG_DIM
 
 # ---- Web page dark-mode tuning ----
