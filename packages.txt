@@ -4,6 +4,7 @@ anki
 apr
 apr-util
 aria2
+atuin
 auto-cpufreq
 base
 base-devel
@@ -18,6 +19,7 @@ clang
 cliphist
 cmake
 colloid-gtk-theme-git
+cups
 easyeffects
 efibootmgr
 eog
@@ -25,6 +27,7 @@ fastfetch
 ffmpeg4.4
 filelight
 firefox
+foot
 fzf
 gamescope
 gimp
@@ -33,16 +36,20 @@ gnome-themes-extra
 gopass
 grim
 grub
+hplip
 htop
 hyprland
 hyprpaper
 i3-wm
 inter-font
 java-runtime-common
+jlcone-bin
 jq
 jre-openjdk
 keyd
+kicad
 kitty
+lazygit
 lib32-nvidia-utils
 lib32-vulkan-radeon
 libc++
@@ -54,6 +61,7 @@ libreoffice-fresh
 libvirt
 linux
 linux-firmware
+livecaptions
 localsend-bin
 lsp-plugins
 luarocks
@@ -79,6 +87,7 @@ nwg-look
 obs-studio
 obsidian
 opencl-nvidia
+openrgb
 otf-font-awesome
 pamixer
 paru
@@ -90,6 +99,7 @@ pyenv
 python-adblock
 python-numpy
 python-pip
+python-pyqt5
 qalculate-gtk
 qbittorrent
 qemu-full
@@ -113,9 +123,13 @@ spicetify-bin
 spotify
 sshfs
 stow
+strace
 stress-ng
 sudo
 swaylock
+system-config-printer
+tesseract
+tesseract-data-eng
 testdisk
 tmux
 tree
@@ -129,7 +143,8 @@ vim
 virt-manager
 vlc
 vulkan-tools
-waybar-git
+warpd
+waybar
 waydroid
 whitesur-cursor-theme-git
 whitesur-gtk-theme
@@ -139,6 +154,7 @@ wine-mono
 wine-tkg-staging-bin
 winetricks
 wl-gammarelay
+wlrctl-git
 wtype
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-wlr

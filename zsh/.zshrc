@@ -114,11 +114,13 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH=$HOME/.npm-global/bin:$PATH
 export QTWEBENGINE_FORCE_USE_GBM=1 
 export YAZI_CONFIG_HOME=~/.config/yazi yazi
+export PATH=$HOME/.cargo/bin:$PATH
 
 alias v='nvim'
 alias mail=neomutt
 alias lg='lazygit'
 alias t='tmux attach -t main || tmux new -s main'
+alias ssh-add12='ssh-add -t 43200 ~/.ssh/id_ed25519'
 
 export PATH=$PATH:$HOME/flutter/bin
 

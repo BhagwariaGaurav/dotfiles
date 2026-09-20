@@ -21,6 +21,7 @@ hl.bind(cfg.mod .. " + SHIFT + H", hl.dsp.layout("swapsplit"))
 hl.bind(cfg.mod .. " + UP", hl.dsp.exec_cmd("busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -200"))
 hl.bind(cfg.mod .. " + DOWN", hl.dsp.exec_cmd("busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +200"))
 hl.bind(cfg.mod .. " + Z", hl.dsp.exec_cmd("~/scripts/book-open.sh"))
+hl.bind(cfg.mod .. " + D", hl.dsp.exec_cmd([[grim -g "$(slurp)" - | tesseract stdin stdout -l eng | wl-copy]]))
 hl.bind(cfg.mod .. " + Tab", function()
     -- Change focus to another window
     hl.dispatch(hl.dsp.window.cycle_next())
@@ -150,4 +151,3 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
-
