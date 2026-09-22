@@ -134,7 +134,7 @@ config.set('content.local_content_can_access_remote_urls', True, 'file:///home/b
 config.set('content.local_content_can_access_file_urls', False, 'file:///home/bunnie/.local/share/qutebrowser/userscripts/*')
 
 c.url.searchengines = {
-    "DEFAULT": "https://www.google.com/search?q={}",
+    "DEFAULT": "https://www.duckduckgo.com/search?q={}",
 }
 
 c.url.start_pages = ["about:blank"]

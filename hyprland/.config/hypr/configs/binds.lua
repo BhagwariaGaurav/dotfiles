@@ -68,6 +68,31 @@ hl.bind(
     )
 )
 
+-- Symbol picker: update Python 3.x path if Arch changes Python version
+hl.bind(
+    cfg.mod .. " + SHIFT + I",
+    hl.dsp.exec_cmd(
+        "rofimoji --files " ..
+        "/usr/lib/python3.14/site-packages/picker/data/arrows.csv " ..
+        "/usr/lib/python3.14/site-packages/picker/data/currency_symbols.csv " ..
+        "/usr/lib/python3.14/site-packages/picker/data/general_punctuation.csv " ..
+        "/usr/lib/python3.14/site-packages/picker/data/letterlike_symbols.csv " ..
+        "/usr/lib/python3.14/site-packages/picker/data/math.csv " ..
+        "/usr/lib/python3.14/site-packages/picker/data/mathematical_operators.csv " ..
+        "/usr/lib/python3.14/site-packages/picker/data/geometric_shapes.csv " ..
+        "/usr/lib/python3.14/site-packages/picker/data/superscripts_and_subscripts.csv " ..
+        "/usr/lib/python3.14/site-packages/picker/data/supplemental_arrows-a.csv " ..
+        "/usr/lib/python3.14/site-packages/picker/data/supplemental_arrows-b.csv " ..
+        "/usr/lib/python3.14/site-packages/picker/data/supplemental_mathematical_operators.csv " ..
+        "/usr/lib/python3.14/site-packages/picker/data/supplemental_punctuation.csv " ..
+        "/usr/lib/python3.14/site-packages/picker/data/miscellaneous_symbols.csv " ..
+        "/usr/lib/python3.14/site-packages/picker/data/miscellaneous_symbols_and_arrows.csv " ..
+        "/usr/lib/python3.14/site-packages/picker/data/dingbats.csv " ..
+        "--action copy --prompt 'Symbols ' " ..
+        "--selector-args='-theme " .. rofi_theme .. "'"
+    )
+)
+
 hl.bind(
     "PRINT",
     hl.dsp.exec_cmd(
