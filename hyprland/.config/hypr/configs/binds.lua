@@ -88,7 +88,7 @@ hl.bind(
         "/usr/lib/python3.14/site-packages/picker/data/miscellaneous_symbols.csv " ..
         "/usr/lib/python3.14/site-packages/picker/data/miscellaneous_symbols_and_arrows.csv " ..
         "/usr/lib/python3.14/site-packages/picker/data/dingbats.csv " ..
-        "--prompt 'Symbols ' " ..
+        "--action copy --prompt 'Symbols ' " ..
         "--selector-args='-theme " .. rofi_theme .. "'"
     )
 )
@@ -161,6 +161,39 @@ hl.bind(cfg.mod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 -- Move/resize windows with cfg.mod + LMB/RMB and dragging
 hl.bind(cfg.mod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(cfg.mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+hl.bind(cfg.mod .. " + G", hl.dsp.exec_cmd(
+    [[hyprctl eval 'hl.config { cursor = { inactive_timeout = 0, hide_on_key_press = false } }' && hyprctl dispatch 'hl.dsp.submap("cursor")']]
+))
+
+hl.bind(cfg.mod .. " + G", hl.dsp.exec_cmd(
+    [[hyprctl eval 'hl.config { cursor = { inactive_timeout = 0, hide_on_key_press = false } }' && hyprctl dispatch 'hl.dsp.submap("cursor")']]
+))
+
+hl.define_submap("cursor", function()
+    hl.bind("A", hl.dsp.exec_cmd(
+        [[hyprctl dispatch 'hl.dsp.submap("reset")' && wl-kbptr && hyprctl dispatch 'hl.dsp.submap("cursor")']]
+    ))
+
+    hl.bind("J", hl.dsp.exec_cmd("wlrctl pointer move 0 10"),  { repeating = true })
+    hl.bind("K", hl.dsp.exec_cmd("wlrctl pointer move 0 -10"), { repeating = true })
+    hl.bind("L", hl.dsp.exec_cmd("wlrctl pointer move 10 0"),  { repeating = true })
+    hl.bind("H", hl.dsp.exec_cmd("wlrctl pointer move -10 0"), { repeating = true })
+    
+    -- fast nudge (shift)
+    hl.bind("SHIFT + J", hl.dsp.exec_cmd("wlrctl pointer move 0 40"),  { repeating = true })
+    hl.bind("SHIFT + K", hl.dsp.exec_cmd("wlrctl pointer move 0 -40"), { repeating = true })
+    hl.bind("SHIFT + L", hl.dsp.exec_cmd("wlrctl pointer move 40 0"),  { repeating = true })
+    hl.bind("SHIFT + H", hl.dsp.exec_cmd("wlrctl pointer move -40 0"), { repeating = true })
+
+    hl.bind("R", hl.dsp.exec_cmd("wlrctl pointer click left"))
+    hl.bind("S", hl.dsp.exec_cmd("wlrctl pointer click middle"))
+    hl.bind("T", hl.dsp.exec_cmd("wlrctl pointer click right"))
+
+    hl.bind("ESCAPE", hl.dsp.exec_cmd(
+        [[hyprctl eval 'hl.config { cursor = { inactive_timeout = 3, hide_on_key_press = true } }' && hyprctl dispatch 'hl.dsp.submap("reset")']]
+    ))
+end)
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
