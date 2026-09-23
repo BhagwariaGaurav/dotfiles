@@ -166,10 +166,6 @@ hl.bind(cfg.mod .. " + G", hl.dsp.exec_cmd(
     [[hyprctl eval 'hl.config { cursor = { inactive_timeout = 0, hide_on_key_press = false } }' && hyprctl dispatch 'hl.dsp.submap("cursor")']]
 ))
 
-hl.bind(cfg.mod .. " + G", hl.dsp.exec_cmd(
-    [[hyprctl eval 'hl.config { cursor = { inactive_timeout = 0, hide_on_key_press = false } }' && hyprctl dispatch 'hl.dsp.submap("cursor")']]
-))
-
 hl.define_submap("cursor", function()
     hl.bind("A", hl.dsp.exec_cmd(
         [[hyprctl dispatch 'hl.dsp.submap("reset")' && wl-kbptr && hyprctl dispatch 'hl.dsp.submap("cursor")']]
@@ -186,7 +182,7 @@ hl.define_submap("cursor", function()
     hl.bind("SHIFT + L", hl.dsp.exec_cmd("wlrctl pointer move 40 0"),  { repeating = true })
     hl.bind("SHIFT + H", hl.dsp.exec_cmd("wlrctl pointer move -40 0"), { repeating = true })
 
-    hl.bind("R", hl.dsp.exec_cmd("wlrctl pointer click left"))
+    hl.bind("R", hl.dsp.exec_cmd("hyprctl dispatch click left"))
     hl.bind("S", hl.dsp.exec_cmd("wlrctl pointer click middle"))
     hl.bind("T", hl.dsp.exec_cmd("wlrctl pointer click right"))
 

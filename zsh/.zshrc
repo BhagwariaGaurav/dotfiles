@@ -115,6 +115,7 @@ export PATH=$HOME/.npm-global/bin:$PATH
 export QTWEBENGINE_FORCE_USE_GBM=1 
 export YAZI_CONFIG_HOME=~/.config/yazi yazi
 export PATH=$HOME/.cargo/bin:$PATH
+export YDOTOOL_SOCKET=/tmp/.ydotool_socket
 
 alias v='nvim'
 alias mail=neomutt
