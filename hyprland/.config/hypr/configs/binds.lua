@@ -88,7 +88,7 @@ hl.bind(
         "/usr/lib/python3.14/site-packages/picker/data/miscellaneous_symbols.csv " ..
         "/usr/lib/python3.14/site-packages/picker/data/miscellaneous_symbols_and_arrows.csv " ..
         "/usr/lib/python3.14/site-packages/picker/data/dingbats.csv " ..
-        "--action copy --prompt 'Symbols ' " ..
+        "--prompt 'Symbols ' " ..
         "--selector-args='-theme " .. rofi_theme .. "'"
     )
 )

@@ -1,5 +1,6 @@
 alsa-tools
 amd-ucode
+android-tools
 anki
 apr
 apr-util
@@ -36,6 +37,7 @@ gnome-themes-extra
 gopass
 grim
 grub
+gvfs-mtp
 hplip
 htop
 hyprland
@@ -161,6 +163,7 @@ xdg-desktop-portal-wlr
 xorg-server
 xorg-xinit
 yazi
+ydotool
 yt-dlp
 ytfzf
 zathura
