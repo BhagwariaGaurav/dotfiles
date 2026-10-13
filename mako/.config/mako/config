@@ -1,80 +1,68 @@
-# mako notification config — warm monochrome palette
 font=JetBrains Mono 12
-format=<b>%a</b> · %s\n%b
+format=<span foreground="#000000" background="#ffffff"><b> %a </b></span> <b>%s</b>\n<span foreground="#ffffff">%b</span>
 sort=-time
 output=eDP-1
 layer=overlay
 anchor=top-right
-
-# geometry
 width=380
 margin=12
 padding=14,16
-border-size=1
+border-size=2
 border-radius=0
-
-# base colors (warm)
-background-color=#0b0a08ee
-text-color=#e8e0d4
-border-color=#3e372c
-
-# icons
+background-color=#000000f5
+text-color=#ffffff
+border-color=#bfbfbf
 icons=0
 max-icon-size=32
-
-# timing
 default-timeout=4000
 ignore-timeout=1
-
-# text
 text-alignment=left
 markup=1
 actions=1
 history=1
 max-history=5
 
-# -------------------------------------------------------
-# urgency levels
-# -------------------------------------------------------
 [urgency=low]
-background-color=#0b0a08cc
-border-color=#2e2a24
-text-color=#a89e8e
+background-color=#080808f2
+border-color=#555555
+text-color=#b0b0b0
 default-timeout=5000
+format=<span foreground="#080808" background="#8a8a8a"><b> %a </b></span> <b>%s</b>\n%b
 
 [urgency=normal]
-background-color=#0b0a08ee
-border-color=#3e372c
-text-color=#e8e0d4
-default-timeout=1000
+background-color=#000000f5
+border-color=#bfbfbf
+text-color=#ffffff
+default-timeout=4000
 
 [urgency=high]
-background-color=#0b0a08
-border-color=#e0847b
-text-color=#e8e0d4
+background-color=#ffffff
+border-color=#ffffff
+text-color=#000000
 default-timeout=0
+format=<span foreground="#ffffff" background="#000000"><b> %a </b></span> <b>%s</b>\n%b
 
-# -------------------------------------------------------
-# app-specific overrides
-# -------------------------------------------------------
 [app-name="lightcord"]
-background-color=#0b0a08ee
-border-color=#7a95c9
-text-color=#e8e0d4
+border-color=#ffffff
+text-color=#ffffff
 
 [summary~="^log-.*"]
-border-color=#8fd19e
-text-color=#8fd19e
+border-color=#e6e6e6
+text-color=#e6e6e6
 
 [app-name="discord"]
-border-color=#7a95c9
+border-color=#d9d9d9
+text-color=#ffffff
 
 [app-name="spotify"]
-border-color=#9bb37d
+border-color=#a6a6a6
+text-color=#ffffff
 
 [app-name="playerctl"]
-border-color=#b39ddb
+border-color=#ffffff
+text-color=#ffffff
 
-# silent/suppress rules
 [app-name="lightcord" summary~="(orz|ORZ|sto|STO|otl|OTL)"]
 invisible=1
+
+
