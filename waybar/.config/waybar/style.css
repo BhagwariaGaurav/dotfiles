@@ -3,6 +3,7 @@
 * {
     font-family: "Iosevka", "Font Awesome 6 Free", sans-serif;
     font-size: 13px;
+    font-weight: 700;
     min-height: 0;
     border: none;
     border-radius: 2;
@@ -70,7 +71,7 @@ window#waybar {
 
 /* Clock */
 #clock {
-    font-weight: 600;
+    font-weight: 700;
     color: #f5f5f5;
     padding: 0 14px;
 }
@@ -134,7 +135,7 @@ window#waybar {
 /* Keyboard layout indicator */
 #language {
     color: #999999;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 /* Tray (running app applets) */
