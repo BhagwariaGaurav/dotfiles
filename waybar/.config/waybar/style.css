@@ -1,28 +1,52 @@
-/* ~/.config/waybar/style.css */
+/* ~/.config/waybar/style.css
+   Modern floating-island bar + Tahoe-style menus.
+   Edit the palette below to retheme everything in one place. */
 
+/* ---------- Palette ---------- */
+@define-color surface        #17171a;   /* module islands */
+@define-color surface_hover  #202024;
+@define-color stroke         rgba(255, 255, 255, 0.07);
+@define-color stroke_hover   rgba(255, 255, 255, 0.14);
+@define-color text           #f5f5f7;
+@define-color text_dim       #8e8e93;
+@define-color accent         #0a84ff;   /* system blue; swap for any accent */
+@define-color good           #30d158;
+@define-color warn           #ff9f0a;
+@define-color critical       #ff453a;
+
+/* menus / tooltips (solid) */
+@define-color menu_bg        #1c1c20;
+@define-color menu_border    rgba(255, 255, 255, 0.10);
+@define-color menu_text      #f5f5f7;
+@define-color menu_dim       rgba(245, 245, 247, 0.38);
+@define-color menu_sep       rgba(255, 255, 255, 0.10);
+@define-color menu_hover     #0a84ff;
+@define-color menu_hover_txt #ffffff;
+
+/* ---------- Base ---------- */
 * {
-    font-family: "Iosevka", "Font Awesome 6 Free", sans-serif;
+    font-family: "Inter", "SF Pro Text", "Noto Sans", "Iosevka", "JetBrains Nerd", "Symbols Nerd Font", sans-serif;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 500;
     min-height: 0;
     border: none;
-    border-radius: 2;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
 }
 
+/* Bar is fully transparent; the modules float as rounded islands */
 window#waybar {
     background: transparent;
+    color: @text;
 }
 
-/* The bar itself — flat, square, pinned flush to the top edge */
 #waybar > box {
-    background-color: #000000;
-    border-bottom: 1px solid #2a2a2a;
-    padding: 0 8px;
+    background: transparent;
+    padding: 0 6px;
 }
 
-/* Shared block look for module groups — hard rectangular edges.
-   Grouped modules (audio, hardware) get ONE box each instead of
-   one per module, and their children below are unstyled/transparent. */
+/* ---------- Island look (shared) ---------- */
 #workspaces,
 #clock,
 #audio,
@@ -30,117 +54,157 @@ window#waybar {
 #battery,
 #language,
 #tray {
-    background-color: #141414;
-    border: 1px solid #2a2a2a;
-    margin: 6px 2px;
-    padding: 0 10px;
-    color: #e0e0e0;
+    background-color: @surface;
+    border: 1px solid @stroke;
+    border-radius: 12px;
+    margin: 6px 3px;
+    padding: 0 12px;
+    min-height: 24px;
+    color: @text;
+    transition: background-color 150ms ease, border-color 150ms ease;
 }
 
-/* Workspaces */
+/* tabular digits so numbers don't jitter */
+#clock,
+#cpu,
+#memory,
+#battery,
+#pulseaudio {
+    font-feature-settings: "tnum";
+}
+
+/* Hover feedback on clickable islands */
+#clock:hover,
+#audio:hover,
+#hardware:hover,
+#battery:hover,
+#language:hover {
+    background-color: @surface_hover;
+    border-color: @stroke_hover;
+}
+
+/* ---------- Workspaces ---------- */
 #workspaces {
     padding: 0 4px;
 }
 
 #workspaces button {
-    color: #6e6e6e;
-    background: transparent;
+    color: @text_dim;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-radius: 8px;
     padding: 0 10px;
-    margin: 4px 2px;
-    border: 1px solid transparent;
+    margin: 3px 2px;
     min-width: 18px;
-}
-
-#workspaces button.active {
-    color: #0a0a0a;
-    background-color: #e8e8e8;
-    border: 1px solid #e8e8e8;
-    font-weight: 700;
+    transition: background-color 150ms ease, color 150ms ease;
 }
 
 #workspaces button:hover {
-    background: transparent;
-    background-color: transparent;
-    box-shadow: none;
-    border-top: none;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-    color: inherit;
+    background-color: rgba(255, 255, 255, 0.08);
+    background-image: none;
+    color: @text;
 }
 
-/* Clock */
+#workspaces button.active,
+#workspaces button.focused {
+    background-color: @accent;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+#workspaces button.urgent {
+    background-color: @critical;
+    color: #ffffff;
+}
+
+/* ---------- Clock ---------- */
 #clock {
-    font-weight: 700;
-    color: #f5f5f5;
-    padding: 0 14px;
+    font-weight: 600;
+    padding: 0 16px;
 }
 
-/* CPU / Memory — live inside #hardware, so no background/border
-   of their own, just a small gap between them */
-#cpu, #memory {
+/* ---------- CPU / Memory (inside #hardware) ---------- */
+#cpu,
+#memory {
     background: transparent;
     border: none;
     margin: 0;
     padding: 0 6px;
-    color: #e0e0e0;
+    color: @text;
 }
 
-#cpu.warning, #memory.warning {
-    color: #eab676;
+#cpu.warning,
+#memory.warning {
+    color: @warn;
 }
 
-#cpu.critical, #memory.critical {
-    color: #e07b7b;
+#cpu.critical,
+#memory.critical {
+    color: @critical;
 }
 
-/* Audio / Mic — live inside #audio, so no background/border
-   of their own, just a small gap between them */
+/* ---------- Audio / Mic (inside #audio) ---------- */
 #pulseaudio,
 #pulseaudio.microphone {
     background: transparent;
     border: none;
     margin: 0;
     padding: 0 6px;
-    color: #e0e0e0;
+    color: @text;
 }
 
-/* Battery */
+#pulseaudio.muted {
+    color: @text_dim;
+}
+
+/* ---------- Battery ---------- */
 #battery {
-    color: #e0e0e0;
+    color: @text;
 }
 
-#battery.charging {
-    color: #8fd19e;
+#battery.charging,
+#battery.plugged {
+    color: @good;
 }
 
 #battery.warning:not(.charging) {
-    color: #eab676;
-    border-color: #eab676;
+    color: @warn;
+    border-color: @warn;
 }
 
 #battery.critical:not(.charging) {
-    color: #e07b7b;
-    border-color: #e07b7b;
+    color: @critical;
+    border-color: @critical;
     animation: blink 1.5s linear infinite;
 }
 
 @keyframes blink {
     50% {
-        color: #f5f5f5;
-        border-color: #e07b7b;
+        color: @text;
+        border-color: @critical;
     }
 }
 
-/* Keyboard layout indicator */
+/* ---------- Keyboard layout ---------- */
 #language {
-    color: #999999;
-    font-weight: 700;
+    color: @text_dim;
 }
 
-/* Tray (running app applets) */
+/* ---------- Tray ---------- */
 #tray {
-    padding: 0 10px;
+    padding: 0 6px;
+}
+
+#tray > * {
+    padding: 0 4px;
+    margin: 3px 1px;
+    border-radius: 8px;
+    transition: background-color 150ms ease;
+}
+
+#tray > *:hover {
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
 #tray > .passive {
@@ -149,26 +213,124 @@ window#waybar {
 
 #tray > .needs-attention {
     -gtk-icon-effect: none;
-    background-color: #1a1a1a;
-    border-color: #e07b7b;
+    background-color: alpha(@critical, 0.20);
 }
 
-/* Subtle hover feedback across clickable module groups — flat highlight, no rounding */
-#clock:hover,
-#audio:hover,
-#hardware:hover,
-#battery:hover,
-#language:hover {
-    background-color: #1c1c1c;
-    border-color: #333333;
+/* =====================================================
+   Tahoe-style dropdowns: tray menus, popups, tooltips
+   ===================================================== */
+
+/* menu surface */
+menu,
+#tray menu,
+.tray menu {
+    background-color: @menu_bg;
+    color: @menu_text;
+    border: 1px solid @menu_border;
+    border-radius: 14px;
+    padding: 4px;
+    margin: 0;
+    box-shadow: none;
 }
 
+/* popup window wrapper: invisible so only the rounded menu shows */
+window.popup,
+window.popup decoration,
+window.popup > decoration,
+window.csd,
+window.csd decoration {
+    background: transparent;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* scroll arrows at menu edges */
+menu arrow.top,
+menu arrow.bottom,
+menu > arrow {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    min-height: 0;
+}
+
+/* rows */
+menu menuitem,
+#tray menu menuitem {
+    background-color: transparent;
+    color: @menu_text;
+    border: none;
+    border-radius: 7px;
+    padding: 2px 10px;
+    margin: 0;
+    min-height: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    outline: none;
+    box-shadow: none;
+    transition: background-color 120ms ease;
+}
+
+menu menuitem label,
+#tray menu menuitem label {
+    color: inherit;
+    font-weight: 500;
+}
+
+/* hover pill */
+menu menuitem:hover,
+#tray menu menuitem:hover {
+    background-color: @menu_hover;
+    color: @menu_hover_txt;
+}
+
+/* disabled rows */
+menu menuitem:disabled,
+menu menuitem:disabled label,
+#tray menu menuitem:disabled label {
+    color: @menu_dim;
+}
+
+/* icons + submenu arrows */
+menu menuitem image {
+    margin-right: 6px;
+    min-height: 0;
+}
+
+menu menuitem arrow {
+    color: @menu_dim;
+    min-width: 12px;
+}
+
+/* separators */
+menu separator,
+#tray menu separator {
+    background-color: @menu_sep;
+    min-height: 1px;
+    margin: 3px 8px;
+}
+
+/* check / radio indicators */
+menu check,
+menu radio {
+    border-radius: 4px;
+    background-color: transparent;
+    color: inherit;
+}
+
+/* tooltips */
 tooltip {
-    background-color: #0a0a0a;
-    border: 1px solid #2a2a2a;
+    background-color: @menu_bg;
+    border: 1px solid @menu_border;
+    border-radius: 10px;
+    box-shadow: none;
 }
 
 tooltip label {
-    color: #e0e0e0;
-    padding: 4px;
+    color: @menu_text;
+    padding: 4px 8px;
+    font-weight: 500;
 }
