@@ -6,6 +6,8 @@ apr
 apr-util
 aria2
 atuin
+audacity
+audiorelay
 auto-cpufreq
 base
 base-devel
@@ -21,6 +23,9 @@ cliphist
 cmake
 colloid-gtk-theme-git
 cups
+deepfilternet-ladspa
+dmg2img
+droidcam
 easyeffects
 efibootmgr
 eog
@@ -48,6 +53,7 @@ java-runtime-common
 jlcone-bin
 jq
 jre-openjdk
+kdeconnect
 keyd
 kicad
 kitty
@@ -63,6 +69,7 @@ libreoffice-fresh
 libvirt
 linux
 linux-firmware
+linux-headers
 livecaptions
 localsend-bin
 lsp-plugins
@@ -130,6 +137,7 @@ stress-ng
 sudo
 swaylock
 system-config-printer
+terminus-font
 tesseract
 tesseract-data-eng
 testdisk
@@ -138,9 +146,11 @@ tree
 ttc-iosevka
 ttf-jetbrains-mono-nerd
 ttf-ms-fonts
+ttf-nunito
 ueberzugpp
 unrar
 usbutils
+v4l2loopback-utils
 vim
 virt-manager
 vlc
