@@ -92,9 +92,8 @@
     // uncomment "keyboard-name" and set it to the device name from
     // `hyprctl devices` (under "keyboard" entries)
     "hyprland/language": {
-        "format": "\uf11c {short}",
-        "format-en": "\uf11c EN"
-        // "keyboard-name": "your-keyboard-name-here"
+    "format": "\uf11c {shortDescription} {variant}",
+    "on-click": "hyprctl switchxkblayout all next"
     },
 
     // System tray — holds icons/applets for running background apps
